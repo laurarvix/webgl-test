@@ -34,7 +34,7 @@ function drawScene(gl, programInfo, buffers) {
   mat4.translate(
     modelViewMatrix, // destination matrix
     modelViewMatrix, // matrix to translate
-    [-0.0, 0.0, -6.0],
+    [-0.0, 0.0, -6.0]
   ); // amount to translate
 
   // Tell WebGL how to pull out the positions from the position
@@ -42,7 +42,7 @@ function drawScene(gl, programInfo, buffers) {
   setPositionAttribute(gl, buffers, programInfo);
 
   setColorAttribute(gl, buffers, programInfo);
-  
+
   // Tell WebGL to use our program when drawing
   gl.useProgram(programInfo.program);
 
@@ -50,12 +50,12 @@ function drawScene(gl, programInfo, buffers) {
   gl.uniformMatrix4fv(
     programInfo.uniformLocations.projectionMatrix,
     false,
-    projectionMatrix,
+    projectionMatrix
   );
   gl.uniformMatrix4fv(
     programInfo.uniformLocations.modelViewMatrix,
     false,
-    modelViewMatrix,
+    modelViewMatrix
   );
 
   {
@@ -81,7 +81,7 @@ function setPositionAttribute(gl, buffers, programInfo) {
     type,
     normalize,
     stride,
-    offset,
+    offset
   );
   gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
 }
@@ -101,7 +101,7 @@ function setColorAttribute(gl, buffers, programInfo) {
     type,
     normalize,
     stride,
-    offset,
+    offset
   );
   gl.enableVertexAttribArray(programInfo.attribLocations.vertexColor);
 }
